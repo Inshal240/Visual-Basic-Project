@@ -9,6 +9,16 @@ Begin VB.Form Form3
    ScaleHeight     =   8370
    ScaleWidth      =   10050
    StartUpPosition =   3  'Windows Default
+   Begin VB.TextBox Text5 
+      DataField       =   "Units Available"
+      DataSource      =   "Data1"
+      Height          =   375
+      Left            =   1680
+      TabIndex        =   18
+      Text            =   "Text5"
+      Top             =   5160
+      Width           =   975
+   End
    Begin VB.TextBox ItemName 
       Alignment       =   2  'Center
       CausesValidation=   0   'False
@@ -181,6 +191,24 @@ Begin VB.Form Form3
       TabIndex        =   0
       Top             =   7560
       Width           =   2295
+   End
+   Begin VB.Label Label5 
+      Caption         =   "Units Available"
+      DataSource      =   "Data1"
+      BeginProperty Font 
+         Name            =   "Palatino Linotype"
+         Size            =   9.75
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   495
+      Left            =   720
+      TabIndex        =   19
+      Top             =   5040
+      Width           =   855
    End
    Begin VB.Label Label7 
       Caption         =   "Name"
