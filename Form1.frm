@@ -99,6 +99,31 @@ Attribute VB_GlobalNameSpace = False
 Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
-Private Sub FirearmsButton_Click()
+Private Sub ExitButton_Click()
+End
+End Sub
 
+Private Sub FirearmsButton_Click()
+Form2.Show
+Form1.Hide
+End Sub
+
+Private Sub GearButton_Click()
+Form3.Show
+Form1.Hide
+End Sub
+
+Private Sub JetsButton_Click()
+Form6.Show
+Form1.Hide
+End Sub
+
+Private Sub TanksButton_Click()
+Form5.Show
+Form1.Hide
+End Sub
+
+Private Sub TransportButton_Click()
+Form4.Show
+Form1.Hide
 End Sub
