@@ -1,61 +1,500 @@
 VERSION 5.00
 Begin VB.Form Form2 
    Caption         =   "Form2"
-   ClientHeight    =   6810
+   ClientHeight    =   8370
    ClientLeft      =   60
    ClientTop       =   450
-   ClientWidth     =   8520
+   ClientWidth     =   10050
+   BeginProperty Font 
+      Name            =   "MS Sans Serif"
+      Size            =   8.25
+      Charset         =   0
+      Weight          =   400
+      Underline       =   0   'False
+      Italic          =   0   'False
+      Strikethrough   =   0   'False
+   EndProperty
    LinkTopic       =   "Form2"
-   ScaleHeight     =   6810
-   ScaleWidth      =   8520
+   ScaleHeight     =   8370
+   ScaleWidth      =   10050
    StartUpPosition =   3  'Windows Default
+   Begin VB.CommandButton SearchButton 
+      Caption         =   "Go"
+      BeginProperty Font 
+         Name            =   "MS Sans Serif"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   375
+      Left            =   4080
+      TabIndex        =   24
+      Top             =   1080
+      Width           =   495
+   End
+   Begin VB.TextBox SearchBox 
+      BeginProperty Font 
+         Name            =   "Arial"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   -1  'True
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   375
+      Left            =   840
+      TabIndex        =   23
+      Text            =   "Search..."
+      Top             =   1080
+      Width           =   3255
+   End
+   Begin VB.CommandButton DeleteButton 
+      Caption         =   "Delete"
+      BeginProperty Font 
+         Name            =   "MS Sans Serif"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   735
+      Left            =   3000
+      TabIndex        =   22
+      Top             =   1680
+      Width           =   1695
+   End
+   Begin VB.CommandButton AddButton 
+      Caption         =   "Add"
+      BeginProperty Font 
+         Name            =   "MS Sans Serif"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   735
+      Left            =   840
+      TabIndex        =   21
+      Top             =   1680
+      Width           =   1815
+   End
+   Begin VB.Data Data1 
+      Caption         =   "Browse"
+      Connect         =   "Access"
+      DatabaseName    =   ""
+      DefaultCursorType=   0  'DefaultCursor
+      DefaultType     =   2  'UseODBC
+      Exclusive       =   0   'False
+      BeginProperty Font 
+         Name            =   "Arial"
+         Size            =   9.75
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   495
+      Left            =   840
+      Options         =   0
+      ReadOnly        =   0   'False
+      RecordsetType   =   1  'Dynaset
+      RecordSource    =   ""
+      Top             =   2640
+      Width           =   3855
+   End
+   Begin VB.TextBox Text6 
+      BeginProperty Font 
+         Name            =   "MS Sans Serif"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   375
+      Left            =   3960
+      TabIndex        =   13
+      Text            =   "Text6"
+      Top             =   5880
+      Width           =   975
+   End
+   Begin VB.TextBox Text5 
+      BeginProperty Font 
+         Name            =   "MS Sans Serif"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   375
+      Left            =   3960
+      TabIndex        =   12
+      Text            =   "Text5"
+      Top             =   5160
+      Width           =   975
+   End
+   Begin VB.TextBox Text4 
+      BeginProperty Font 
+         Name            =   "MS Sans Serif"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   375
+      Left            =   3960
+      TabIndex        =   11
+      Text            =   "Text4"
+      Top             =   4440
+      Width           =   975
+   End
+   Begin VB.TextBox Text3 
+      BeginProperty Font 
+         Name            =   "MS Sans Serif"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   375
+      Left            =   1680
+      TabIndex        =   10
+      Text            =   "Text3"
+      Top             =   5880
+      Width           =   975
+   End
+   Begin VB.TextBox Text2 
+      BeginProperty Font 
+         Name            =   "MS Sans Serif"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   375
+      Left            =   1680
+      TabIndex        =   9
+      Text            =   "Text2"
+      Top             =   5160
+      Width           =   975
+   End
+   Begin VB.TextBox Text1 
+      BeginProperty Font 
+         Name            =   "MS Sans Serif"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   375
+      Left            =   1680
+      TabIndex        =   8
+      Text            =   "Text1"
+      Top             =   4440
+      Width           =   975
+   End
+   Begin VB.PictureBox Picture 
+      BeginProperty Font 
+         Name            =   "MS Sans Serif"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   3015
+      Left            =   5400
+      ScaleHeight     =   2955
+      ScaleWidth      =   3675
+      TabIndex        =   7
+      Top             =   1080
+      Width           =   3735
+   End
+   Begin VB.Frame Description 
+      Caption         =   "Description"
+      BeginProperty Font 
+         Name            =   "MS Sans Serif"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   2055
+      Left            =   5400
+      TabIndex        =   6
+      Top             =   4320
+      Width           =   3735
+      Begin VB.TextBox DescriptionBox 
+         Height          =   1455
+         Left            =   240
+         TabIndex        =   26
+         Text            =   "Description goes here."
+         Top             =   360
+         Width           =   3255
+      End
+   End
    Begin VB.CommandButton FirearmsButton 
       Caption         =   "Firearms"
+      BeginProperty Font 
+         Name            =   "MS Sans Serif"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
       Height          =   615
-      Left            =   600
+      Left            =   1200
       TabIndex        =   5
-      Top             =   4680
+      Top             =   6720
       Width           =   2295
    End
    Begin VB.CommandButton GearButton 
       Caption         =   "Gear"
+      BeginProperty Font 
+         Name            =   "MS Sans Serif"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
       Height          =   615
-      Left            =   3120
+      Left            =   3720
       TabIndex        =   4
-      Top             =   4680
+      Top             =   6720
       Width           =   2295
    End
    Begin VB.CommandButton TransportButton 
       Caption         =   "Transport"
+      BeginProperty Font 
+         Name            =   "MS Sans Serif"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
       Height          =   615
-      Left            =   5640
+      Left            =   6240
       TabIndex        =   3
-      Top             =   4680
+      Top             =   6720
       Width           =   2295
    End
    Begin VB.CommandButton TanksButton 
       Caption         =   "Tanks"
+      BeginProperty Font 
+         Name            =   "MS Sans Serif"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
       Height          =   615
-      Left            =   600
+      Left            =   1200
       TabIndex        =   2
-      Top             =   5520
+      Top             =   7560
       Width           =   2295
    End
    Begin VB.CommandButton JetsButton 
       Caption         =   "Jets"
+      BeginProperty Font 
+         Name            =   "MS Sans Serif"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
       Height          =   615
-      Left            =   3120
+      Left            =   3720
       TabIndex        =   1
-      Top             =   5520
+      Top             =   7560
       Width           =   2295
    End
    Begin VB.CommandButton ExitButton 
       Caption         =   "Exit"
+      BeginProperty Font 
+         Name            =   "MS Sans Serif"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
       Height          =   615
-      Left            =   5640
+      Left            =   6240
       TabIndex        =   0
-      Top             =   5520
+      Top             =   7560
       Width           =   2295
+   End
+   Begin VB.Label TableName 
+      Alignment       =   2  'Center
+      Caption         =   "Table Name"
+      BeginProperty Font 
+         Name            =   "Palatino Linotype"
+         Size            =   24
+         Charset         =   0
+         Weight          =   700
+         Underline       =   -1  'True
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   615
+      Left            =   2760
+      TabIndex        =   25
+      Top             =   120
+      Width           =   4815
+   End
+   Begin VB.Label Label6 
+      Caption         =   "Label6"
+      BeginProperty Font 
+         Name            =   "Palatino Linotype"
+         Size            =   9.75
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   375
+      Left            =   3000
+      TabIndex        =   20
+      Top             =   5880
+      Width           =   855
+   End
+   Begin VB.Label Label5 
+      Caption         =   "Label5"
+      BeginProperty Font 
+         Name            =   "Palatino Linotype"
+         Size            =   9.75
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   375
+      Left            =   3000
+      TabIndex        =   19
+      Top             =   5160
+      Width           =   855
+   End
+   Begin VB.Label Label4 
+      Caption         =   "Label4"
+      BeginProperty Font 
+         Name            =   "Palatino Linotype"
+         Size            =   9.75
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   375
+      Left            =   3000
+      TabIndex        =   18
+      Top             =   4440
+      Width           =   855
+   End
+   Begin VB.Label Label3 
+      Caption         =   "Label3"
+      BeginProperty Font 
+         Name            =   "Palatino Linotype"
+         Size            =   9.75
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   375
+      Left            =   720
+      TabIndex        =   17
+      Top             =   5880
+      Width           =   855
+   End
+   Begin VB.Label Label2 
+      Caption         =   "Label2"
+      BeginProperty Font 
+         Name            =   "Palatino Linotype"
+         Size            =   9.75
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   375
+      Left            =   720
+      TabIndex        =   16
+      Top             =   5160
+      Width           =   855
+   End
+   Begin VB.Label Label1 
+      Caption         =   "Label1"
+      BeginProperty Font 
+         Name            =   "Palatino Linotype"
+         Size            =   9.75
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   375
+      Left            =   720
+      TabIndex        =   15
+      Top             =   4440
+      Width           =   855
+   End
+   Begin VB.Label ItemName 
+      Alignment       =   2  'Center
+      Caption         =   "Item Name"
+      BeginProperty Font 
+         Name            =   "Palatino Linotype"
+         Size            =   15.75
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   555
+      Left            =   960
+      TabIndex        =   14
+      Top             =   3480
+      Width           =   3555
    End
 End
 Attribute VB_Name = "Form2"
@@ -63,3 +502,10 @@ Attribute VB_GlobalNameSpace = False
 Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
+Private Sub Label2_Click()
+
+End Sub
+
+Private Sub Label3_Click()
+
+End Sub
