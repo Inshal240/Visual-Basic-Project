@@ -25,7 +25,7 @@ Begin VB.Form Form5
       Top             =   1680
       Width           =   1815
    End
-   Begin VB.CommandButton NextButton 
+   Begin VB.CommandButton NextButton1 
       Caption         =   "Next >>"
       Height          =   495
       Left            =   3120
@@ -33,7 +33,7 @@ Begin VB.Form Form5
       Top             =   2520
       Width           =   1815
    End
-   Begin VB.CommandButton PreviousButton 
+   Begin VB.CommandButton PreviousButton1 
       Caption         =   "<< Previous"
       Height          =   495
       Left            =   840
@@ -353,6 +353,7 @@ End Sub
 
 Private Sub DeleteButton_Click()
 Data1.Recordset.Delete
+MessageBox.Show ("Current Record has been deleted.")
 End Sub
 
 Private Sub ExitButton_Click()
@@ -362,6 +363,27 @@ End Sub
 Private Sub FirearmsButton_Click()
 Form2.Show
 Form5.Hide
+End Sub
+
+
+Private Sub NextButton1_Click()
+    
+    If Data1.Recordset.EOF = True Then
+        Data1.Recordset.MoveFirst
+    End If
+    
+    Data1.Recordset.MoveNext
+    
+End Sub
+
+Private Sub PreviousButton1_Click()
+
+    If Data1.Recordset.BOF Then
+        Data1.Recordset.MoveLast
+    End If
+    
+    Data1.Recordset.MovePrevious
+    
 End Sub
 
 Private Sub GearButton_Click()

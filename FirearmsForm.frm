@@ -9,7 +9,7 @@ Begin VB.Form Form2
    ScaleHeight     =   8370
    ScaleWidth      =   10050
    StartUpPosition =   3  'Windows Default
-   Begin VB.CommandButton NextButton 
+   Begin VB.CommandButton NextButton1 
       Caption         =   "Next >>"
       Height          =   495
       Left            =   3120
@@ -17,7 +17,7 @@ Begin VB.Form Form2
       Top             =   2520
       Width           =   1815
    End
-   Begin VB.CommandButton PreviousButton 
+   Begin VB.CommandButton PreviousButton1 
       Caption         =   "<< Previous"
       Height          =   495
       Left            =   840
@@ -407,6 +407,7 @@ End Sub
 
 Private Sub DeleteButton_Click()
 Data1.Recordset.Delete
+MsgBox "Current Record has been deleted."
 End Sub
 
 Private Sub ExitButton_Click()
@@ -423,6 +424,25 @@ Form6.Show
 Form2.Hide
 End Sub
 
+Private Sub NextButton1_Click()
+    
+    If Data1.Recordset.EOF = True Then
+        Data1.Recordset.MoveFirst
+    End If
+    
+    Data1.Recordset.MoveNext
+    
+End Sub
+
+Private Sub PreviousButton1_Click()
+
+    If Data1.Recordset.BOF Then
+        Data1.Recordset.MoveLast
+    End If
+    
+    Data1.Recordset.MovePrevious
+    
+End Sub
 
 Private Sub TanksButton_Click()
 Form5.Show
