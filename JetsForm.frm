@@ -9,6 +9,22 @@ Begin VB.Form Form6
    ScaleHeight     =   8370
    ScaleWidth      =   10050
    StartUpPosition =   3  'Windows Default
+   Begin VB.CommandButton PreviousButton 
+      Caption         =   "<< Previous"
+      Height          =   495
+      Left            =   840
+      TabIndex        =   27
+      Top             =   2520
+      Width           =   1935
+   End
+   Begin VB.CommandButton NextButton 
+      Caption         =   "Next >>"
+      Height          =   495
+      Left            =   3120
+      TabIndex        =   26
+      Top             =   2520
+      Width           =   1815
+   End
    Begin VB.TextBox ItemName 
       Alignment       =   2  'Center
       CausesValidation=   0   'False
@@ -57,7 +73,7 @@ Begin VB.Form Form6
    End
    Begin VB.CommandButton DeleteButton 
       Caption         =   "Delete"
-      Height          =   735
+      Height          =   615
       Left            =   3120
       TabIndex        =   19
       Top             =   1680
@@ -65,7 +81,7 @@ Begin VB.Form Form6
    End
    Begin VB.CommandButton AddButton 
       Caption         =   "Add"
-      Height          =   735
+      Height          =   615
       Left            =   840
       TabIndex        =   18
       Top             =   1680
@@ -93,7 +109,8 @@ Begin VB.Form Form6
       ReadOnly        =   0   'False
       RecordsetType   =   1  'Dynaset
       RecordSource    =   "Jets"
-      Top             =   2640
+      Top             =   360
+      Visible         =   0   'False
       Width           =   4095
    End
    Begin VB.TextBox Text5 
@@ -163,10 +180,13 @@ Begin VB.Form Form6
       Top             =   4320
       Width           =   3735
       Begin VB.TextBox DescriptionBox 
+         DataField       =   "Description"
+         DataSource      =   "Data1"
          Height          =   1455
          Left            =   240
+         MultiLine       =   -1  'True
          TabIndex        =   23
-         Text            =   "Description goes here."
+         Text            =   "JetsForm.frx":0000
          Top             =   360
          Width           =   3255
       End
@@ -351,6 +371,12 @@ Attribute VB_GlobalNameSpace = False
 Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
+Private Sub AddButton_Click()
+
+Data1.Recordset.AddNew
+
+End Sub
+
 Private Sub ExitButton_Click()
 End
 End Sub
@@ -364,7 +390,6 @@ Private Sub GearButton_Click()
 Form3.Show
 Form6.Hide
 End Sub
-
 
 Private Sub TanksButton_Click()
 Form5.Show

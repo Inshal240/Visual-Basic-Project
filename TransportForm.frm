@@ -9,6 +9,38 @@ Begin VB.Form Form4
    ScaleHeight     =   8370
    ScaleWidth      =   10050
    StartUpPosition =   3  'Windows Default
+   Begin VB.CommandButton AddButton 
+      Caption         =   "Add"
+      Height          =   615
+      Left            =   840
+      TabIndex        =   25
+      Top             =   1680
+      Width           =   1935
+   End
+   Begin VB.CommandButton DeleteButton 
+      Caption         =   "Delete"
+      Height          =   615
+      Left            =   3120
+      TabIndex        =   24
+      Top             =   1680
+      Width           =   1815
+   End
+   Begin VB.CommandButton NextButton 
+      Caption         =   "Next >>"
+      Height          =   495
+      Left            =   3120
+      TabIndex        =   23
+      Top             =   2520
+      Width           =   1815
+   End
+   Begin VB.CommandButton PreviousButton 
+      Caption         =   "<< Previous"
+      Height          =   495
+      Left            =   840
+      TabIndex        =   22
+      Top             =   2520
+      Width           =   1935
+   End
    Begin VB.TextBox ItemName 
       Alignment       =   2  'Center
       CausesValidation=   0   'False
@@ -25,7 +57,7 @@ Begin VB.Form Form4
       EndProperty
       Height          =   510
       Left            =   840
-      TabIndex        =   22
+      TabIndex        =   20
       Text            =   "Text7"
       Top             =   3585
       Width           =   4095
@@ -34,7 +66,7 @@ Begin VB.Form Form4
       Caption         =   "Go"
       Height          =   375
       Left            =   4440
-      TabIndex        =   19
+      TabIndex        =   17
       Top             =   1080
       Width           =   495
    End
@@ -50,26 +82,10 @@ Begin VB.Form Form4
       EndProperty
       Height          =   375
       Left            =   840
-      TabIndex        =   18
+      TabIndex        =   16
       Text            =   "Search Transport..."
       Top             =   1080
       Width           =   3615
-   End
-   Begin VB.CommandButton DeleteButton 
-      Caption         =   "Delete"
-      Height          =   735
-      Left            =   3120
-      TabIndex        =   17
-      Top             =   1680
-      Width           =   1815
-   End
-   Begin VB.CommandButton AddButton 
-      Caption         =   "Add"
-      Height          =   735
-      Left            =   840
-      TabIndex        =   16
-      Top             =   1680
-      Width           =   1935
    End
    Begin VB.Data Data1 
       Caption         =   "Browse"
@@ -93,7 +109,8 @@ Begin VB.Form Form4
       ReadOnly        =   0   'False
       RecordsetType   =   1  'Dynaset
       RecordSource    =   "Transport"
-      Top             =   2640
+      Top             =   360
+      Visible         =   0   'False
       Width           =   4095
    End
    Begin VB.TextBox Text4 
@@ -157,8 +174,9 @@ Begin VB.Form Form4
          DataSource      =   "Data1"
          Height          =   1455
          Left            =   240
-         TabIndex        =   21
-         Text            =   "Description goes here."
+         MultiLine       =   -1  'True
+         TabIndex        =   19
+         Text            =   "TransportForm.frx":0000
          Top             =   360
          Width           =   3255
       End
@@ -225,7 +243,7 @@ Begin VB.Form Form4
       EndProperty
       Height          =   255
       Left            =   960
-      TabIndex        =   23
+      TabIndex        =   21
       Top             =   3240
       Width           =   975
    End
@@ -243,7 +261,7 @@ Begin VB.Form Form4
       EndProperty
       Height          =   615
       Left            =   2520
-      TabIndex        =   20
+      TabIndex        =   18
       Top             =   120
       Width           =   4815
    End
@@ -324,6 +342,12 @@ Attribute VB_GlobalNameSpace = False
 Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
+Private Sub AddButton_Click()
+
+Data1.Recordset.AddNew
+
+End Sub
+
 Private Sub ExitButton_Click()
 End
 End Sub
