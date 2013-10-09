@@ -377,6 +377,10 @@ Data1.Recordset.AddNew
 
 End Sub
 
+Private Sub DeleteButton_Click()
+Data1.Recordset.Delete
+End Sub
+
 Private Sub ExitButton_Click()
 End
 End Sub
