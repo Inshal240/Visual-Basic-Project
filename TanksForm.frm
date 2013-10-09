@@ -368,21 +368,21 @@ End Sub
 
 Private Sub NextButton1_Click()
     
+    Data1.Recordset.MoveNext
+    
     If Data1.Recordset.EOF = True Then
         Data1.Recordset.MoveFirst
     End If
-    
-    Data1.Recordset.MoveNext
     
 End Sub
 
 Private Sub PreviousButton1_Click()
 
+    Data1.Recordset.MovePrevious
+    
     If Data1.Recordset.BOF Then
         Data1.Recordset.MoveLast
     End If
-    
-    Data1.Recordset.MovePrevious
     
 End Sub
 
