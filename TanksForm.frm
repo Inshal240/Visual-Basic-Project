@@ -88,11 +88,13 @@ Begin VB.Form Form5
       Width           =   3615
    End
    Begin VB.Data Data1 
+      BOFAction       =   1  'BOF
       Caption         =   "Browse"
       Connect         =   "Access"
       DatabaseName    =   "C:\Visual-Basic-Project\Database.mdb"
       DefaultCursorType=   0  'DefaultCursor
       DefaultType     =   2  'UseODBC
+      EOFAction       =   1  'EOF
       Exclusive       =   0   'False
       BeginProperty Font 
          Name            =   "Arial"
@@ -370,6 +372,27 @@ End Sub
 Private Sub JetsButton_Click()
 Form6.Show
 Form5.Hide
+End Sub
+
+Private Sub NextButton_Click()
+    
+    Data1.Recordset.MoveNext
+    
+    If Data1.Recordset.EOF = True Then
+        Data1.Recordset.MoveLFirst
+    End If
+    
+    
+End Sub
+
+Private Sub PreviousButton_Click()
+
+    Data1.Recordset.MovePrevious
+    
+    If Data1.Recordset.BOF Then
+        Data1.Recordset.MoveLast
+    End If
+    
 End Sub
 
 Private Sub TransportButton_Click()
