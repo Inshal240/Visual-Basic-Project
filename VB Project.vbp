@@ -1,8 +1,8 @@
 Type=Exe
 Form=Form1.frm
-Reference=*\G{00020430-0000-0000-C000-000000000046}#2.0#0#..\..\..\..\..\WINDOWS\system32\stdole2.tlb#OLE Automation
+Reference=*\G{00020430-0000-0000-C000-000000000046}#2.0#0#..\WINDOWS\system32\stdole2.tlb#OLE Automation
 Form=FirearmsForm.frm
-Reference=*\G{00025E01-0000-0000-C000-000000000046}#4.0#0#..\..\..\..\..\Program Files\Common Files\Microsoft Shared\DAO\DAO350.DLL#Microsoft DAO 3.51 Object Library
+Reference=*\G{00025E01-0000-0000-C000-000000000046}#4.0#0#..\Program Files\Common Files\Microsoft Shared\DAO\DAO350.DLL#Microsoft DAO 3.51 Object Library
 Form=GearForm.frm
 Form=TransportForm.frm
 Form=TanksForm.frm

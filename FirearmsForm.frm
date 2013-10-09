@@ -74,7 +74,7 @@ Begin VB.Form Form2
    Begin VB.Data Data1 
       Caption         =   "Browse"
       Connect         =   "Access"
-      DatabaseName    =   "C:\Documents and Settings\XPMUser\My Documents\GitHub\Visual-Basic-Project\Database.mdb"
+      DatabaseName    =   "C:\Visual-Basic-Project\Database.mdb"
       DefaultCursorType=   0  'DefaultCursor
       DefaultType     =   2  'UseODBC
       Exclusive       =   0   'False
@@ -379,6 +379,10 @@ Attribute VB_GlobalNameSpace = False
 Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
+Private Sub Data1_Validate(Action As Integer, Save As Integer)
+
+End Sub
+
 Private Sub ExitButton_Click()
 End
 End Sub

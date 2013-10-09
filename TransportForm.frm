@@ -74,7 +74,7 @@ Begin VB.Form Form4
    Begin VB.Data Data1 
       Caption         =   "Browse"
       Connect         =   "Access"
-      DatabaseName    =   "C:\Documents and Settings\XPMUser\My Documents\GitHub\Visual-Basic-Project\Database.mdb"
+      DatabaseName    =   "C:\Visual-Basic-Project\Database.mdb"
       DefaultCursorType=   0  'DefaultCursor
       DefaultType     =   2  'UseODBC
       Exclusive       =   0   'False
