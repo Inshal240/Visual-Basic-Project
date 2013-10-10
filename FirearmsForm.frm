@@ -175,7 +175,7 @@ Begin VB.Form Form2
       Top             =   4440
       Width           =   975
    End
-   Begin VB.PictureBox Picture 
+   Begin VB.PictureBox Preview 
       Height          =   3015
       Left            =   5400
       ScaleHeight     =   2955
@@ -428,12 +428,39 @@ End Sub
 
 Private Sub NextButton1_Click()
     
+    Dim imagePath As String
+    Dim imageIsNull As Boolean
+    
+     
     Data1.Recordset.MoveNext
     
     If Data1.Recordset.EOF = True Then
         Data1.Recordset.MoveFirst
     End If
     
+    'Image null check code
+    
+    
+    'If path is empty
+    imagePath = Data1.Recordset.Fields("Image")
+    
+    If imagePath = "" Then
+        imageIsNull = True
+    End If
+    
+    
+    If imageIsNull Then
+        Preview.Picture = LoadPicture("C:\Visual-Basic-Project\Images\default.jpg")
+    End If
+    
+    ' if path is not empty BUT the mentioned file doesn't exist
+    
+    If Not imageIsNull And Dir(imagePath) <> "" Then
+       Preview.Picture = LoadPicture(imagePath)
+    Else
+        Preview.Picture = LoadPicture("C:\Visual-Basic-Project\Images\default.jpg")
+    End If
+       
 End Sub
 
 Private Sub PreviousButton1_Click()

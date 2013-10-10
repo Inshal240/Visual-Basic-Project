@@ -165,7 +165,7 @@ Begin VB.Form Form6
       Top             =   4440
       Width           =   975
    End
-   Begin VB.PictureBox Picture 
+   Begin VB.PictureBox Preview 
       Height          =   3015
       Left            =   5400
       ScaleHeight     =   2955
