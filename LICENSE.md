@@ -1,6 +1,6 @@
 The MIT License (MIT)
 
-Copyright (c) 2015 Muhammad Inshal Uddin, Muhammad Yaseen Aftab, Syed Usama Jameel
+Copyright (c) 2015 Muhammad Inshal Uddin, S. M. Taha Zaidi , Asjad Sohail
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
